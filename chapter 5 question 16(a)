@@ -1,0 +1,16 @@
+#include<iostream >
+using namespace std;
+bool v=true;
+char a,b;
+void reverse() {
+char ch;
+cin.get(ch);
+if (ch != '\n')
+reverse();
+cout.put(ch);
+}
+s
+int main()
+{
+	reverse();
+}
