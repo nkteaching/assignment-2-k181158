@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int sum=0;
+int fun(int a)
+{
+	if(a==0)
+	{
+		return sum;
+		
+		
+	}
+	else
+	{
+		sum+=a;
+		a--;
+		fun(a);
+	}
+}
+int main()
+{
+	int a;
+	cout<<"enter a number"<<endl;
+	cin>>a;
+	cout<<fun(a);
+}
