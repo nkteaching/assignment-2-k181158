@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+void remove_ch(char *x,char ch,int size)
+{
+	static int i;
+	if(x[i]=='\0')
+	{
+		cout<<x;
+	}
+	else if(x[i]!=ch)
+	{
+		i++;
+		remove_ch(x,ch,size);
+	}
+	else
+	{
+		int temp_i,j;
+		if(x[i]==ch)
+		{
+			temp_i=i;
+			for(j=i+1;j<size;j++)
+			{
+				x[temp_i]=x[j];
+				temp_i++;
+			}
+			size--;
+			x[size]='\0';
+		}
+		i++;
+		remove_ch(x,ch,size);
+	}
+}
+int main()
+{
+	char str[100]="Muhammad Sabir";
+	char ch='i';
+	int size;
+	for(size=0;str[size]!='\0';size++);
+	remove_ch(str,ch,size);
+	return 0;
+}
