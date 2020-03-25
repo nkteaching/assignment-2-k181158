@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int fun(int n)
+{
+	if(n==0)
+	{
+		return 0;
+	}
+	else
+	{
+		if(n%2!=0)
+		{
+			cout<<n<<endl;
+			n--;
+			fun(n);
+		}
+		else
+		{
+			n--;
+			fun(n);
+		}
+	}
+}
+int main()
+{
+	int a;
+	cout<<"Enter a number u want to get odd numbers"<<endl;
+	cin>>a;
+	fun(a);
+}
