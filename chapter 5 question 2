@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+int count=0;
+	struct node{
+	int data;
+	node *next;
+
+}*head=NULL;
+
+void insert(int n)
+{
+	if(head==NULL)
+	{
+		node *p=new node;
+		p->data=n;
+		p->next=NULL;
+		head=p;
+	}
+	else
+	{
+		node *p=head;
+	while(p->next!=NULL)
+	{
+		p=p->next;
+	}
+	node *t=new node;
+	t->data=n;
+	t->next=NULL;
+	p->next=t;
+}
+}
+	
+int display(node *t)
+	{
+		
+	if(t==NULL)
+	{
+		return 0;
+	}
+	else
+		{
+			t=t->next;
+			count++;
+			return   display(t);
+		}
+	}
+
+int main()
+{
+insert(5);
+insert(10);
+insert(9);
+insert(11);
+insert(1);
+insert(2);
+
+display(head);
+cout<<"The elements in a linked list are"<<endl;
+cout<<count;
+}
