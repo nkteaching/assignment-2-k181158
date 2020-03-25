@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+struct node{
+	int data;
+	node *next;
+};
+class st{
+	public:
+	node *top_st1=NULL;
+	push(int d){
+			node *t=new node;
+			t->data=d;
+			t->next=top_st1;
+			top_st1=t;	
+		}
+		int pop(){
+			if(top_st1==NULL){
+				cout<<"stack is empty\n";
+				return 0;
+			}	
+			node *t=top_st1;
+			int a=t->data;
+			top_st1=top_st1->next;
+			t->next=NULL;
+			delete t;
+			return a;
+		}
+		disp(){
+		node *t=top_st1;
+		cout<<endl;
+		while (t!=NULL){
+			cout<<t->data<<endl;
+			t=t->next;
+		}}
+		int len(){
+		node *t=top_st1;
+		int i=0;
+		while(t!=NULL){
+			t=t->next;
+			i++;
+		}
+		return i;
+		}
+};
+main(){
+	st S,t1,t2;
+	int d;
+	cout<<"enter elements in stack\n";  //press -1 to exit entering
+	cin>>d;
+	while(d!=-1){
+	S.push(d);
+	cin>>d;
+}	
+}
